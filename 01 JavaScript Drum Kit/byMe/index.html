@@ -4,8 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Drum Kit byME</title>
+    <style>
+        .key { 
+
+        }
+    </style>
 </head>
 <body>
-    
+    <section>
+        <div class="container">
+           <div class="key" data-key="65">
+                <kbd>A</kbd>
+                <span id="keyAudioA">
+                    <source src="sound/Piano.pp.A3.aiff" type="audio/aiff">
+                </span>    
+           </div>
+
+            <div class="key" data-key="83">
+                <kbd>S</kbd>
+            </div>
+
+            <div class="key" data-key="68">
+                <kbd>D</kbd>
+            </div>
+
+            <div class="key" data-key="70">
+                <kbd>F</kbd>
+            </div>
+
+            <div class="key" data-key="74">
+                <kbd>J</kbd>
+           </div>
+
+            <div class="key" data-key="75">
+                <kbd>K</kbd>
+            </div>
+
+            <div class="key" data-key="76">
+                <kbd>L</kbd>
+            </div>
+
+            <div class="key" data-key="186">
+                <kbd>;</kbd>
+            </div>
+        </div>
+    </section>
+        <!-- Method 1  -->
+    <script>
+        document.onkeydown = function(e) {
+            var keynum;
+            if(window.event) { //IE
+                keynum = e.keyCode;
+            } else if(e.which) { //Netscape/FireFox/Opera
+                keynum = e.which;
+            }
+
+            // console.log(keynum, String.fromCharCode(keynum));
+
+           switch (keynum) {
+                case 65:
+                var audio = new Audio('sound/c3.mp3');
+                audio.play();
+                break;
+
+                case 83:
+                var audio = new Audio('sound/d3.mp3');
+                audio.play();
+                break;
+
+                case 68:
+                var audio = new Audio('sound/e3.mp3');
+                audio.play();
+                break;
+
+                case 70:
+                var audio = new Audio('sound/f3.mp3');
+                audio.play();
+                break;
+
+                case 74:
+                var audio = new Audio('sound/g3.mp3');
+                audio.play();
+                break;
+
+                case 75:
+                var audio = new Audio('sound/a3.mp3');
+                audio.play();
+                break;
+
+                case 76:
+                var audio = new Audio('sound/b3.mp3');
+                audio.play();
+                break;
+                
+                case 186:
+                var audio = new Audio('sound/b3.mp3');
+                audio.play();
+                break;
+
+                default: 
+                    alert('You have pressed out of Key Mentioned.');
+                break;
+
+           }
+        }
+    </script>
+
+
 </body>
 </html>
